@@ -1,0 +1,26 @@
+name: Failure Demo
+
+on:
+  push:
+
+jobs:
+  failure-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show header
+        run: echo "Starting workflow"
+
+      - name: Run failure code
+        run: exit 1
+
+      - name: Text that should not show
+        run: echo "This should not run"
+
+      - name: Show text that should show either all previous steps is success or not
+        if: always()
+        run: echo "Cleanup executed"
+
+      - name: Show text if previous step is failed
+        if: failure()
+        run: echo "Workflow encountered an error"
