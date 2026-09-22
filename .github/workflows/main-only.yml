@@ -1,0 +1,14 @@
+name: Main Only
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main-only-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show text
+        run: echo "This workflow only runs on main"
