@@ -1,0 +1,30 @@
+name: Repository Information
+
+on:
+  push:
+
+jobs:
+  repository-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Show Repository Inspection Started
+        run: echo "Repository Inspection Started"
+
+      - name: Show current user
+        run: whoami
+
+      - name: Show current working directory
+        run: pwd
+
+      - name: List current working directory
+        run: ls -al
+
+      - name: Show README
+        run: cat README.md
+
+      - name: Show Repository Inspection Completed
+        run: echo "Repository Inspection Completed"
