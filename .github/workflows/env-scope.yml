@@ -1,0 +1,30 @@
+name: ENV Scope
+
+on:
+  workflow_dispatch:
+
+env:
+  APP_ENV: development
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_ENV: testing
+
+    steps:
+      - name: Show APP_ENV
+        run: echo '$APP_ENV'
+      - name: Show APP_ENV steps level scope
+        env:
+          APP_ENV: temporary
+        run: echo '$APP_ENV'
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show APP_ENV
+        run: echo '$APP_ENV'
+
