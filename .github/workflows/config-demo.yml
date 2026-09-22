@@ -1,0 +1,15 @@
+name: Config Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  config-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show APP_URL
+        run: echo "Application URL:" ${{ vars.APP_URL }}
+
+      - name: Show DEMO_SECRET
+        run: echo "Demo Secret:" ${{ secrets.DEMO_SECRET }}
