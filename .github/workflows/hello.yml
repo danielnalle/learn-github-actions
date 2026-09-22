@@ -4,21 +4,18 @@ on:
   push:
 
 jobs:
-  say-hello:
+  inspect:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print greeting
-        run: echo "Hello from Github Actions"
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Show current user
-        run: whoami
-
-      - name: Show operating system
-        run: uname -a
-
-      - name: Show working directory
+      - name: Show current directory
         run: pwd
 
-      - name: List files
+      - name: List repository files
         run: ls -al
+
+      - name: Read README
+        run: cat README.md
