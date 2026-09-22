@@ -9,19 +9,19 @@ jobs:
 
     steps:
       - name: Show repository
-        run: echo "Repository:" ${{ github.repository }}
+        run: echo "Repository = ${{ github.repository }}"
 
       - name: Show actor
-        run: echo "Triggered by:" ${{ github.actor }}
+        run: echo "Triggered by = ${{ github.actor }}"
 
       - name: Show event name
-        run: echo "Triggered by event:" ${{ github.event_name }}
+        run: echo "Triggered by event = ${{ github.event_name }}"
 
       - name: Show ref
-        run: echo "Ref:" ${{ github.ref }}
+        run: echo "Ref = ${{ github.ref }}"
 
       - name: Show commit SHA
-        run: echo "Commit SHA:" ${{ github.sha }}
+        run: echo "Commit SHA = ${{ github.sha }}"
 
       - name: Show runner OS
-        run: echo "Runner OS:" ${{ runner.os }}
+        run: echo "Runner OS = ${{ runner.os }}"
