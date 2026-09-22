@@ -1,0 +1,19 @@
+name: ENV Demo
+
+on:
+  workflow_dispatch:
+
+env:
+  APP_NAME: github-actions-learning
+  APP_ENV: development
+
+jobs:
+  env-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show application
+        run: echo "Application = $APP_NAME" 
+
+      - name: Show environment
+        run: echo "Environment = $APP_ENV"
