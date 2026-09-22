@@ -10,3 +10,15 @@ jobs:
     steps:
       - name: Print greeting
         run: echo "Hello from Github Actions"
+
+      - name: Show current user
+        run: whoami
+
+      - name: Show operating system
+        run: uname -a
+
+      - name: Show working directory
+        run: pwd
+
+      - name: List files
+        run: ls -al
