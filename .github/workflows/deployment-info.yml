@@ -1,0 +1,41 @@
+name: Deployment Information
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  manual-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show header
+        run: echo "=== DEPLOYMENT INFORMATION ==="
+
+      - name: Show application name
+        run: echo "Application name:" ${{ vars.APP_NAME }}
+
+      - name: Show repository name
+        run: echo "Repository:" ${{ github.repository }}
+
+      - name: Show enviroment
+        run: echo "Environment:" ${{ inputs.environment }}
+
+      - name: Show actor
+        run: echo "Triggered by:" ${{ github.actor }}
+
+      - name: Show commit SHA
+        run: echo "Commit:" ${{ github.sha }}
+
+      - name: Show runner 
+        run: echo "Runner:" ${{ runner.os }}
+
+      - name: Show footer
+        run: echo "=== END ==="
