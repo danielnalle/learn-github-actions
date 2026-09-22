@@ -1,0 +1,30 @@
+name: System Information
+
+on:
+  push:
+
+jobs:
+  system-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Show header
+        run: echo "=== SYSTEM INFORMATION ==="
+
+      - name: Show current username
+        run: whoami
+
+      - name: Show current directory
+        run: pwd
+
+      - name: Show kernel/OS
+        run: uname -a
+
+      - name: List current directory
+        run: ls -al
+
+      - name: Show footer
+        run: echo "=== WORKFLOW FINISHED ==="
