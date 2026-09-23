@@ -93,3 +93,24 @@ jobs:
         with:
           name: application-build
           path: dist/
+
+  docker-build:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Show docker version
+        run: docker --version
+
+      - name: Build docker image
+        run: |
+          docker build \
+          -t github-actions-learning:${{ github.sha }} \
+          .
+
+      - name: List all docker images
+        run: docker image ls
