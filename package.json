@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src test"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   },
   "homepage": "https://github.com/danielnalle/learn-github-actions#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/markdown": "^8.0.3",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
     "jest": "^30.5.2"
   }
 }
