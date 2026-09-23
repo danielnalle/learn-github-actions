@@ -20,22 +20,22 @@ jobs:
         run: echo "=== DEPLOYMENT INFORMATION ==="
 
       - name: Show application name
-        run: echo "Application name:" ${{ vars.APP_NAME }}
+        run: 'echo "Application name: $APP_NAME"'
 
       - name: Show repository name
-        run: echo "Repository:" ${{ github.repository }}
+        run: 'echo "Repository: ${{ github.repository }}"'
 
       - name: Show enviroment
-        run: echo "Environment:" ${{ inputs.environment }}
+        run: 'echo "Environment: ${{ inputs.environment }}"'
 
       - name: Show actor
-        run: echo "Triggered by:" ${{ github.actor }}
+        run: 'echo "Triggered by: ${{ github.actor }}"'
 
       - name: Show commit SHA
-        run: echo "Commit:" ${{ github.sha }}
+        run: 'echo "Commit: ${{ github.sha }}"'
 
       - name: Show runner 
-        run: echo "Runner:" ${{ runner.os }}
+        run: 'echo "Runner: ${{ runner.os }}"'
 
       - name: Show footer
         run: echo "=== END ==="
