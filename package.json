@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint src test"
+    "lint": "eslint src test",
+    "build": "node -e \"console.log('Build completed')\""
   },
   "repository": {
     "type": "git",
