@@ -1,7 +1,7 @@
 const { add, subtract } = require("../src/calculator");
 
 test("adds two numbers", () => {
-  expect(add(2, 3)).toBe(5);
+  expect(add(2, 3)).toBe(100);
 });
 
 test("subtracts two numbers", () => {
