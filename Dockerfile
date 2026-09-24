@@ -8,4 +8,4 @@ RUN npm ci
 
 COPY . .
 
-CMD ["node", "src/calculator.js"]
+CMD ["node", "src/server.js"]
