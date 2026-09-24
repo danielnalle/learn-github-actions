@@ -153,6 +153,8 @@ jobs:
           printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
+          cat ~/.ssh/id_ed25519
+
       - name: Test SSH Connection
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
