@@ -15,6 +15,9 @@ jobs:
       - name: Show URL
         run: 'echo "URL: ${{ vars.DEPLOY_URL }}"'
 
+      - name: Show deploy token
+        run: 'echo "${{ secrets.DEPLOY_TOKEN }}"'
+
   show-production:
     runs-on: ubuntu-latest
     environment: production
@@ -25,3 +28,6 @@ jobs:
 
       - name: Show URL
         run: 'echo "URL: ${{ vars.DEPLOY_URL }}"'
+
+      - name: Show deploy token
+        run: 'echo "${{ secrets.DEPLOY_TOKEN }}"'
