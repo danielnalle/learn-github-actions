@@ -1,0 +1,30 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  IMAGE_NAME: ghcr.io/danielnalle/learn-github-actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Show title
+        run: echo "=== STAGING DEPLOYMENT ==="
+
+      - name: Show environment
+        run: 'echo "${{ vars.APP_ENV }}"'
+
+      - name: Show image name and tag
+        run: 'echo "Image: $IMAGE_NAME:${{ github.sha }}"'
+
+      - name: Deploying
+        run: echo "Deploying..."
+
+      - name: Show footer
+        run: echo "Deployment completed"

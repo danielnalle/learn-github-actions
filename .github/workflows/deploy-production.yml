@@ -1,0 +1,25 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: ghcr.io/danielnalle/learn-github-actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Show title
+        run: echo "=== PRODUCTION DEPLOYMENT ==="
+
+      - name: Show environment
+        run: 'echo "${{ vars.APP_ENV }}"'
+
+      - name: Show image name and tag
+        run: 'echo "Image: $IMAGE_NAME:${{ github.sha }}"'
+
+      - name: Show footer
+        run: echo "Deployment completed"

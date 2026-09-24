@@ -7,6 +7,8 @@ jobs:
   show-staging:
     runs-on: ubuntu-latest
     environment: staging
+    env:
+      DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
     steps:
       - name: Show github deployment environment
@@ -16,11 +18,16 @@ jobs:
         run: 'echo "URL: ${{ vars.DEPLOY_URL }}"'
 
       - name: Show deploy token
-        run: 'echo "${{ secrets.DEPLOY_TOKEN }}"'
+        run: |
+          if [ -n "$DEPLOY_TOKEN" ]; then
+            echo "Deploy token is available"
+          fi
 
   show-production:
     runs-on: ubuntu-latest
     environment: production
+    env:
+      DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
     steps:
       - name: Show github deployment environment
@@ -30,4 +37,7 @@ jobs:
         run: 'echo "URL: ${{ vars.DEPLOY_URL }}"'
 
       - name: Show deploy token
-        run: 'echo "${{ secrets.DEPLOY_TOKEN }}"'
+        run: |
+          if [ -n "$DEPLOY_TOKEN" ]; then
+            echo "Deploy token is available"
+          fi
