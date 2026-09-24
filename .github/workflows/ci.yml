@@ -168,9 +168,7 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_USER: ${{ secrets.SSH_USER }}
         run: |
-          ssh \
-          -i ~/.ssh/id_ed25519 \
-          "$SSH_USER@$SSH_HOST"
+          ssh -i ~/.ssh/id_ed25519 "$SSH_USER@$SSH_HOST"
 
       - name: Set working directory
         env:
