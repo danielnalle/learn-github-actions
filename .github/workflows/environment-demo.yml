@@ -1,0 +1,27 @@
+name: Environment Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  show-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Show github deployment environment
+        run: 'echo "Environment: ${{ vars.APP_ENV }}"'
+
+      - name: Show URL
+        run: 'echo "URL: ${{ vars.DEPLOY_URL }}"'
+
+  show-production:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Show github deployment environment
+        run: 'echo "Environment: ${{ vars.APP_ENV }}"'
+
+      - name: Show URL
+        run: 'echo "URL: ${{ vars.DEPLOY_URL }}"'
